@@ -1,0 +1,7 @@
+mixin MainFormModal()
+	+Modal({ className: 'main-form-popup', id: 'popup-call' })
+		.popup__title-wrap.section-title-wrap
+			h2.section-title Обратный звонок
+			p.section-descr Оставьте свои данные, и мы перезвоним #[br] Вам в течение 15 минут
+
+		+MainForm('popup')

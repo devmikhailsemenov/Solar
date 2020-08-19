@@ -1,0 +1,57 @@
+mixin Comments()
+	-
+		const commentsList = [
+			{
+				src: 'img/flats/flats_1.jpg',
+				alt: 'Комментарий',
+				title: '«Ключевая мысль отзыва»',
+				text: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке',
+				name: 'Вениамин Вениаминович'
+
+			},
+			{
+				src: 'img/comments/rev2.png',
+				alt: 'Комментарий',
+				title: '«Ключевая мысль отзыва»',
+				text: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке',
+				name: 'Михаил Семёнов'
+			},
+			{
+				src: 'img/flats/flats_1.jpg',
+				alt: 'Комментарий',
+				title: '«Ключевая мысль отзыва»',
+				text: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке',
+				name: 'Вениамин Вениаминович'
+
+			},
+			{
+				src: 'img/comments/rev2.png',
+				alt: 'Комментарий',
+				title: '«Ключевая мысль отзыва»',
+				text: 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке',
+				name: 'Михаил Семёнов'
+			}
+		]
+
+	section.comments(id='comments')
+		.container
+			.comments__title-wrap.section-title-wrap
+				h2.section-title Отзывы наших клиентов
+				p.section-descr.
+					За ? лет наша комнада более ? уфимцам решить проблемы
+					с покупкой и продажей жилья
+			.comments__slider-wrap
+				.comments__slider.swiper-container
+					.swiper-wrapper
+						each commentsItem, i in commentsList
+							.comments__item.shadow-block.swiper-slide
+								.comments__item-main-idea
+									.comments__item-ava
+										img.comments__item-img(src= commentsItem.src alt= commentsItem.alt)
+									.comments__item-title= commentsItem.title
+								p.comments__item-comment= commentsItem.text
+								.comments__author-name= commentsItem.name
+				+SliderArrow('comments__btn')
+				+SliderPagination('comments__dots')
+			.section-btn-wrap
+				button.btn(data-modal='popup-call') Заказать звонок

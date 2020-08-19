@@ -1,0 +1,10 @@
+mixin MobileMenu()
+	.mobile-menu.popup.box-hidden
+		+Navbar('mobile-menu__navbar')
+		+Phones('mobile-menu__phones')
+		.mobile-menu__time-work.time-work
+			span Ежедневно, 10:00–23:00
+		.mobile-menu__btn-wrap
+			button.btn(data-modal='popup-call') заказать звонок
+		+Social('mobile-menu__social')
+

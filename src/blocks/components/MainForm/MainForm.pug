@@ -1,0 +1,15 @@
+mixin MainForm(className)
+	-
+		const fieldList = [
+			{name: 'name', label: 'Имя', required: true, id: 'name-user'},
+			{name: 'phone', label: 'Телефон', required: true, id: 'phone-user'}
+		]
+
+	form(class=`${className}__form form`)
+		div(class='form__inputs-block')
+			each fieldItem, i in fieldList
+				+FieldText(fieldItem)
+		div(class=`${className}__btn-wrap`)
+				button(class=`${className}__btn form__btn btn`) отправить
+
+

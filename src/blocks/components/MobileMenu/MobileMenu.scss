@@ -1,0 +1,54 @@
+.mobile-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: auto;
+	background-color: $whiteColor;
+	padding: 45px 95px 45px 15px;
+	overflow-y: auto;
+	transform: translateX(0%);
+	z-index: 999;
+	will-change: transform;
+	transition: all .5s ease;
+	text-align: left;
+	margin: 0;
+	opacity: 1;
+	max-width: none;
+
+	&_active {
+		transform: translateX(0%);
+	}
+
+	&__navbar {
+		margin-bottom: 55px;
+	}
+
+	&__phones {
+		margin-bottom: 35px;
+	}
+
+	&__time-work {
+		margin-bottom: 37px;
+	}
+
+	&__btn-wrap {
+		margin-bottom: 20px;
+	}
+}
+
+.mobile-menu.box-hidden.popup_enter-to {
+	display: inline-block;
+	transform: translate3d(-100%, 0, 0);
+}
+
+.mobile-menu.box-hidden.popup_leave-to {
+	display: inline-block;
+	transform: translate3d(-100%, 0, 0);
+}
+
+@include adaptive-max-mobile-sm {
+	.mobile-menu {
+		padding: 45px 15px;
+	}
+}
